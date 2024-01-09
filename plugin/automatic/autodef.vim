@@ -2,7 +2,7 @@
 " Vim Plugin for Verilog Code Automactic Generation 
 " Author:         HonkW
 " Website:        https://honk.wang
-" Last Modified:  2023/06/29 23:13
+" Last Modified:  2024/01/08 10:47
 " File:           autodef.vim
 " Note:           AutoDef function partly from zhangguo's vimscript
 "                 Progress bar based off code from "progressbar widget" plugin by
@@ -306,94 +306,6 @@ function g:AutoWire() abort
 endfunction
 "}}}1
 
-"AutoDef 自动定义所有信号{{{1
-"--------------------------------------------------
-" Function: AutoDef
-" Input: 
-"   N/A
-" Description:
-"   autodef all signals
-"   namely, autodef = autoreg + autowire
-" Output:
-"   Formatted autodef code
-"---------------------------------------------------
-function g:AutoDef() abort
-    let prefix = s:st_prefix
-
-    "Record current position
-    let orig_idx = line('.')
-    let orig_col = col('.')
-    let save_foldenable = &foldenable
-    execute ':'.'let &foldenable=0'
-
-    "AutoDef all start from top line
-    call cursor(1,1)
-
-    while 1
-        "Put cursor to /*autodef*/ line
-        if search('\/\*autodef\*\/','W') == 0
-            break
-        endif
-
-        "Kill all contents between //Start of automatic define and //End of automatic define 
-        "Current position must be at /*autodef*/ line
-        "call s:KillAutoDef()
-
-        "darw //Start of automatic define
-        if search('\/\/Start of automatic define','W') != 0
-        else
-            call append(line('.'),prefix.'//Start of automatic define')
-            call cursor(line('.')+1,1)
-        endif
-
-        "AutoReg(){{{2
-        "add /*autoreg*/
-        call append(line('.'),'/*autoreg*/')
-        "cursor + 1
-        call cursor(line('.')+1,1)
-        "AutoReg
-        call g:AutoReg()
-        "delete /*autoreg*/
-        execute ':'.line('.').'d'
-        "cursor to end
-        call search('\/\/End of automatic reg','W')
-        "}}}2
-
-        "AutoWire(){{{2
-        "add /*autowire*/
-        call append(line('.'),'/*autowire*/')
-        "cursor + 1
-        call cursor(line('.')+1,1)
-        "AutoReg
-        call g:AutoWire()
-        "delete /*autowire*/
-        execute ':'.line('.').'d'
-        "cursor to end
-        call search('\/\/End of automatic wire','W')
-        "}}}2
-
-        if search('\/\/End of automatic define','W')
-        else
-            call append(line('.'),prefix.'//End of automatic define')
-        endif
-
-        "Only autodef once
-        break
-
-    endwhile
-
-    "Put cursor back to original position
-    let &foldenable = save_foldenable
-    call cursor(orig_idx,orig_col)
-
-    "Move other define down below //End of automatic define
-    if g:atv_autodef_mv == 1
-        call s:DefMove()
-    endif
-
-endfunction
-"}}}1
-
 "KillAutoReg Kill自动寄存器{{{1
 "--------------------------------------------------
 " Function: KillAutoReg
@@ -459,44 +371,6 @@ function g:KillAutoWire() abort
         call s:KillAutoWire()
 
         "only autowire once
-        break
-    endwhile
-
-    "cursor back
-    call cursor(orig_idx,orig_col)
-
-endfunction
-"}}}1
-
-"KillAutoDef Kill自动定义所有信号{{{1
-"--------------------------------------------------
-" Function: KillAutoDef
-" Input: 
-"   N/A
-" Output:
-"   Killed autodef code
-"---------------------------------------------------
-function g:KillAutoDef() abort
-    let prefix = s:st_prefix
-
-    "Record current position
-    let orig_idx = line('.')
-    let orig_col = col('.')
-
-    "AutoDef all start from top line
-    call cursor(1,1)
-
-    while 1
-        "Put cursor to /*autodef*/ line
-        if search('\/\*autodef\*\/','W') == 0
-            break
-        endif
-
-        "Kill all contents between //Start of automatic define and //End of automatic define 
-        "Current position must be at /*autodef*/ line
-        call s:KillAutoDef()
-
-        "only autodef once
         break
     endwhile
 
@@ -1008,7 +882,7 @@ function s:DrawReg(reg_names,reg_list)
     "}}}4
 
     "darw //Start of automatic reg{{{4
-    call add(lines,prefix.'//Start of automatic reg')
+    call add(lines,'//Start of automatic reg')
     "}}}4
 
     "darw //Define flip-flop registers here{{{4
@@ -1175,7 +1049,7 @@ function s:DrawReg(reg_names,reg_list)
     endif
 
     "draw //End of automatic reg{{{4
-    call add(lines,prefix.'//End of automatic reg')
+    call add(lines,'//End of automatic reg')
     "}}}4
 
     "}}}3
@@ -1934,7 +1808,7 @@ function s:DrawWire(wire_names,wire_list)
     "}}}4
 
     "darw //Start of automatic wire{{{4
-    call add(lines,prefix.'//Start of automatic wire')
+    call add(lines,'//Start of automatic wire')
     "}}}4
 
     "darw //Define assign wires here{{{4
@@ -2107,7 +1981,7 @@ function s:DrawWire(wire_names,wire_list)
     endif
 
     "draw //End of automatic wire{{{4
-    call add(lines,prefix.'//End of automatic wire')
+    call add(lines,'//End of automatic wire')
     "}}}4
 
     "}}}3
@@ -3336,3 +3210,126 @@ let &cpo=s:cpo
 unlet s:cpo
 "}}}1
 
+"AutoDef 自动定义所有信号{{{1
+"--------------------------------------------------
+" Function: AutoDef
+" Input: 
+"   N/A
+" Description:
+"   autodef all signals
+"   namely, autodef = autoreg + autowire
+" Output:
+"   Formatted autodef code
+"---------------------------------------------------
+function g:AutoDef() abort
+    let prefix = s:st_prefix
+
+    "Record current position
+    let orig_idx = line('.')
+    let orig_col = col('.')
+    let save_foldenable = &foldenable
+    execute ':'.'let &foldenable=0'
+
+        call s:KillAutoDef()
+    "AutoDef all start from top line
+    call cursor(1,1)
+
+    while 1
+        "Put cursor to /*autodef*/ line
+        if search('\/\*autodef\*\/','W') == 0
+            break
+        endif
+
+        "Kill all contents between //Start of automatic define and //End of automatic define 
+        "Current position must be at /*autodef*/ line
+        "call s:KillAutoDef()
+
+        "darw //Start of automatic define
+        if search('\/\/Start of automatic define','W') == 0
+            call append(line('.'),'//Start of automatic define')
+            call cursor(line('.')+1,1)
+        endif
+
+        "AutoReg(){{{2
+        "add /*autoreg*/
+        call append(line('.'),'/*autoreg*/')
+        "cursor + 1
+        call cursor(line('.')+1,1)
+        "AutoReg
+        call g:AutoReg()
+        "delete /*autoreg*/
+        "execute ':'.line('.').'d'
+        "cursor to end
+        call search('\/\/End of automatic reg','W')
+        "}}}2
+
+        "AutoWire(){{{2
+        "add /*autowire*/
+        call append(line('.'),'/*autowire*/')
+        "cursor + 1
+        call cursor(line('.')+1,1)
+        "AutoReg
+        call g:AutoWire()
+        "delete /*autowire*/
+        "execute ':'.line('.').'d'
+        "cursor to end
+        call search('\/\/End of automatic wire','W')
+        "}}}2
+
+        if search('\/\/End of automatic define','W') == 0
+            call append(line('.'),'  '.'//End of automatic define')
+        endif
+
+        "Only autodef once
+        break
+
+    endwhile
+
+    "Put cursor back to original position
+    let &foldenable = save_foldenable
+    call cursor(orig_idx,orig_col)
+
+    "Move other define down below //End of automatic define
+    if g:atv_autodef_mv == 1
+        call s:DefMove()
+    endif
+
+endfunction
+"}}}1
+"KillAutoDef Kill自动定义所有信号{{{1
+"--------------------------------------------------
+" Function: KillAutoDef
+" Input: 
+"   N/A
+" Output:
+"   Killed autodef code
+"---------------------------------------------------
+function g:KillAutoDef() abort
+    let prefix = s:st_prefix
+
+    "Record current position
+    let orig_idx = line('.')
+    let orig_col = col('.')
+
+    "AutoDef all start from top line
+    call cursor(1,1)
+
+    while 1
+        "Put cursor to /*autodef*/ line
+        if search('\/\*autodef\*\/','W') == 0
+            break
+        endif
+
+        "Kill all contents between //Start of automatic define and //End of automatic define 
+        "Current position must be at /*autodef*/ line
+        call s:KillAutoDef()
+
+        "only autodef once
+        break
+    endwhile
+
+    "cursor back
+    call cursor(orig_idx,orig_col)
+
+endfunction
+"}}}1

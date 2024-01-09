@@ -2,7 +2,7 @@
 " Vim Plugin for Verilog Code Automactic Generation 
 " Author:         HonkW
 " Website:        https://honk.wang
-" Last Modified:  2022/12/06 23:20
+" Last Modified:  2024/01/06 04:10
 " File:           autopara.vim
 " Note:           AutoPara function self-made
 "------------------------------------------------------------------------------

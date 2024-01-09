@@ -14,12 +14,12 @@ function PortAdjust(line,cmts)
     "extract {{{3
     let prefix = repeat(' ',4)
     let port = matchstr(line,'\v<input>|<output>')      "input/output
-    let type = matchstr(line,'\v<wire>|<reg>')          "wire/reg
+    let utype = matchstr(line,'\v<wire>|<reg>')          "wire/reg
     "[31:0]
-    let width = matchstr(line,'\[.*\]')                 
+    let width = matchstr(line,'\[.*\]')
     let width = substitute(width,'\s*','','g')          "delete redundant space
     "name
-    if line =~ '\v(\w+)(\s*$)'  "last line
+    if line =~ '\v(\w+)(\s*$)'  "last of line 
         let name = matchstr(line,'\v(\w+)(\s*$)@=')
     else                        "other line
         let name = matchstr(line,'\v(\w+)(\s*,)@=') 
@@ -34,31 +34,31 @@ function PortAdjust(line,cmts)
         let port2type = repeat(' ',1)
     endif
     "type2width
-    if type == 'reg'
+    if utype == 'reg'
         let type2width = repeat(' ',2)
-    elseif type == 'wire'
+    elseif utype == 'wire'
         let type2width = repeat(' ',1)
     else
         let type2width = repeat(' ',5)      "align to 5 blanks
         "let type2width = ''                "align to input if no wire/reg
     endif
     "width2name
-    let width2name_len = s:pos_name - len(prefix.port.port2type.type.type2width.width)
+    let width2name_len = g:pos_name - len(prefix.port.port2type.utype.type2width.width)
     let width2name = repeat(' ',width2name_len)
     "name2comma
-    let name2cma_len = s:pos_symbol - len(prefix.port.port2type.type.type2width.width.width2name.name)
+    let name2cma_len = g:pos_symbol - len(prefix.port.port2type.utype.type2width.width.width2name.name)
     let name2cma = repeat(' ',name2cma_len)
     "comma
-    let cma = matchstr(line,',')
-    if cma != ','
-        let cma = ' '
+    let ucma = matchstr(line,',')
+    if ucma != ','
+        let ucma = ' '
     endif
     "comma2comments
     let cma2cmts = repeat(' ',4)
     "}}}3
     
     "pairup {{{3
-    let line = prefix.port.port2type.type.type2width.width.width2name.name.name2cma.cma.cma2cmts.cmts
+    let line = prefix.port.port2type.utype.type2width.width.width2name.name.ucma.name2cma.cma2cmts.cmts
     return line
     "}}}3
 
@@ -66,51 +66,37 @@ endfunction
 "}}}2
 
 "reg/wire adjust{{{2
+"retrun line[prefix, utype,    width,  name, ";", comments]
+"           [      , wire/reg, [31:0], name, ";", comments]
 function WireRegAdjust(line,cmts)
     let line = a:line   "line without comments
     let cmts = a:cmts   "comments
 
     "extract & insert space {{{3
     let prefix = repeat(' ',4)
-    let type = matchstr(line,'\v<wire>|<reg>')          "wire/reg
+    let utype = matchstr(line,'\v<wire>|<reg>')          "wire/reg
     let width = matchstr(line,'\[.*\]')                 "[31:0]
     let width = substitute(width,'\s*','','g')          "delete redundant space
+    let name = matchstr(line,'\v(\w+)(\s*;)@=')         "name
     "type2width
-    if type == 'reg'
+    if utype == 'reg'
         let type2width = repeat(' ',2)
-    elseif type == 'wire'
+    elseif utype == 'wire'
         let type2width = repeat(' ',1)
     endif
     "width2name
-    let width2name_len = s:pos_name - len(prefix.type.type2width.width)
+    let width2name_len = g:pos_name - len(prefix.utype.type2width.width)
     let width2name = repeat(' ',width2name_len)
+    "name2comma
+    let name2cma_len = g:pos_symbol - len(prefix.utype.type2width.width.width2name.name)
+    let name2cma = repeat(' ',name2cma_len)
     "comma2comments
     let cma2cmts = repeat(' ',4) 
     "}}}3
 
-    "results {{{3
-    let results = []
-    let names = split(line,',\zs') 
-    let name = ''
-    for name in names
-        "match word + ,
-        if name =~ '\v\w+\s*,'
-            let name = matchstr(name,'\v(\w+\s*)(,)@=')
-            "name2comma
-            let name2cma_len = s:pos_symbol - len(prefix.type.type2width.width.width2name.name)
-            let name2cma = repeat(' ',name2cma_len)
-            let results = add(results,prefix.type.type2width.width.width2name.name.name2cma.';'.cma2cmts.cmts)
-            "match word + ;
-        elseif name =~ '\v\w+\s*;' 
-            let name = matchstr(name,'\v(\w+\s*)(;)@=')
-            "name2comma
-            let name2cma_len = s:pos_symbol - len(prefix.type.type2width.width.width2name.name)
-            let name2cma = repeat(' ',name2cma_len)
-            let results = add(results,prefix.type.type2width.width.width2name.name.name2cma.';'.cma2cmts.cmts)
-        endif
-    endfor
-
-    return results
+    "return {{{3
+    let line = prefix.utype.type2width.width.width2name.name.';'.name2cma.cma2cmts.cmts
+    return line
     "}}}3
     
 endfunction
@@ -122,41 +108,36 @@ function ParaAdjust(line,cmts)
     let cmts = a:cmts   "comments
     "extract & insert space {{{3
     let prefix = repeat(' ',4)
-    let type = matchstr(line,'\v<parameter>|<localparam>')  "parameter/localparam
+    let utype = matchstr(line,'\v<parameter>|<localparam>')  "parameter/localparam
+    "match name
+    let name = matchstr(line,'\v(\w+)(\s*\=)@=')
+    "match name = xxx ,
+    if line =~ '\v\w+\s*,'
+        let value = matchstr(line,'\v(\=\s*)@<=(\S.*\S)(\s*,)@=')    "match = ... ,
+        let value = substitute(value,'\s*','','g')                      "delete all space
+    "match name = xxx ;
+    elseif line =~ '\v\w+\s*;'
+        let value = matchstr(line,'\v(\=\s*)@<=(\S.*\S)(\s*;)@=')    "match = ... ;
+        let value = substitute(value,'\s*','','g')                      "delete all space
+    endif
     "type2name
-    let type2name_len = s:pos_name - len(prefix.type)
+    let type2name_len = g:pos_name - len(prefix.utype)
     let type2name = repeat(' ',type2name_len)
+    "name = value
+    "value2comma
+    let value2cma_len = g:pos_symbol - len(prefix.utype.type2name.name.' = '.value)
+    let value2cma = repeat(' ',value2cma_len)
     "comma2comments
     let cma2cmts = repeat(' ',4)
     "}}}3
 
-    "results {{{3
-    let results = []
-    let formulas = split(line,',\zs') 
-    let formula = ''
-
-    for formula in formulas
-        "match name
-        let name = matchstr(formula,'\v(\w+)(\s*\=)@=')
-        "match name = xxx ,
-        if formula =~ '\v\w+\s*,'
-            let value = matchstr(formula,'\v(\=\s*)@<=(\S.*\S)(\s*,)@=')    "match = ... ,
-            let value = substitute(value,'\s*','','g')                      "delete all space
-            "value2comma
-            let value2cma_len = s:pos_symbol - len(prefix.type.type2name.name.' = '.value)
-            let value2cma = repeat(' ',value2cma_len)
-        "match name = xxx ;
-        elseif formula =~ '\v\w+\s*;' 
-            let value = matchstr(formula,'\v(\=\s*)@<=(\S.*\S)(\s*;)@=')    "match = ... ;
-            let value = substitute(value,'\s*','','g')                      "delete all space
-            "value2comma
-            let value2cma_len = s:pos_symbol - len(prefix.type.type2name.name.' = '.value)
-            let value2cma = repeat(' ',value2cma_len)
-        endif
-        "get results
-        let results = add(results,prefix.type.type2name.name.' = '.value.value2cma.';'.cma2cmts.cmts)
-    endfor
-    return results
+    "return {{{3
+    if line =~ '\v\w+\s*,'
+        let line = prefix.utype.type2name.name.' = '.value.','.value2cma.cma2cmts.cmts
+    elseif line =~ '\v\w+\s*;'
+        let line = prefix.utype.type2name.name.' = '.value.';'.value2cma.cma2cmts.cmts
+    endif
+    return line
     "}}}3
     
 endfunction
@@ -202,9 +183,9 @@ function AlignPara()
                 let line = substitute(substitute(line,'\/\*.*\*\/','',''),'\/\/.*','','')   "delete comments
                 "extract & insert space
                 let prefix = repeat(' ',4)
-                let type = matchstr(line,'\v<parameter>|<localparam>')                      "parameter/localparam
+                let utype = matchstr(line,'\v<parameter>|<localparam>')                      "parameter/localparam
                 "type2name
-                let type2name_len = s:pos_name - len(prefix.type)
+                let type2name_len = g:pos_name - len(prefix.utype)
                 let type2name = repeat(' ',type2name_len)
                 "comma2comments
                 let cma2cmts = repeat(' ',4)
@@ -216,10 +197,10 @@ function AlignPara()
                 let name2eql_len = max_len - len(name)
                 let name2eql = repeat(' ',name2eql_len)
                 "value2comma
-                let value2cma_len = s:pos_symbol - len(prefix.type.type2name.name.name2eql.' = '.value)
+                let value2cma_len = g:pos_symbol - len(prefix.utype.type2name.name.name2eql.' = '.value)
                 let value2cma = repeat(' ',value2cma_len)
                 "get results
-                let line = prefix.type.type2name.name.name2eql.' = '.value.value2cma.';'.cma2cmts.cmts
+                let line = prefix.utype.type2name.name.name2eql.' = '.value.value2cma.';'.cma2cmts.cmts
                 call setline(i,line)
             endfor
         endif
@@ -250,7 +231,7 @@ function AlignAlways()
             let busy = 1
         endif
 
-        "ajust only when meeting always block
+        "ajust only when meeting always blocklet g:pos_symbol = 64
         if busy == 1
 
             "if / case / IDLE:begin
@@ -310,11 +291,11 @@ endfunction
 "Main Function: Format Adjust for verilog {{{1
 function FormatAdjust()
     "pre-define position to place
-    let s:pos_name = 32
-    let s:pos_symbol = 64
+    let g:pos_name = 32
+    let g:pos_symbol = 64
 
     "align always block{{{2
-    call AlignAlways()
+    "call AlignAlways()
     "}}}2
 
     "align input/output, reg/wire, localparam/parameter, delete redundant space {{{2
@@ -328,7 +309,7 @@ function FormatAdjust()
 
         "input/output port adjust {{{3
         if line =~ '\v^\s*(<input>|<output>)'
-            "adjust current line
+            "adjust from current line
             let line = PortAdjust(line,cmts)
             call setline(idx,line)
         endif
@@ -336,33 +317,21 @@ function FormatAdjust()
 
         "reg/wire adjust {{{3
         if line =~ '\v^\s*(<reg>|<wire>)'
-            let results = WireRegAdjust(line,cmts)
             "adjust from current line
-            call setline(idx,results[0])
-            call append(idx,results[1:])
-            "update index
-            let idx = idx + len(results)-1 
+            let line = WireRegAdjust(line,cmts)
+            call setline(idx,line)
         endif 
         "}}}3
 
         "localparam/parameter adjust {{{3
         if line =~ '\v^\s*(<parameter>|<localparam>)'
-            let results = ParaAdjust(line,cmts)
             "adjust from current line
-            call setline(idx,results[0])
-            call append(idx,results[1:])
-            "update index
-            let idx = idx + len(results)-1
+            let line = ParaAdjust(line,cmts)
+            call setline(idx,line)
         endif
         "}}}3
 
         "redundant space deletion {{{3
-
-        "delete redundant line
-        if cmts == '' && line =~ '^\s*$'
-            call setline(idx,'')
-        endif
-
         "delete redundant space in the end
         let line = getline(idx)
         if line =~ '\v\s+$'
@@ -375,7 +344,7 @@ function FormatAdjust()
     "}}}2
 
     "realign localparam/parameter{{{2
-    call AlignPara()
+    "call AlignPara()
     "}}}2
 
 endfunction

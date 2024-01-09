@@ -2,7 +2,7 @@
 " Vim Plugin for Verilog Code Automactic Generation 
 " Author:         HonkW
 " Website:        https://honk.wang
-" Last Modified:  2022/01/06 21:52
+" Last Modified:  2024/01/06 04:09
 " File:           timewave.vim
 " Note:           Timewave function totally copy from zhangguo's vimscript,only add mapping
 "------------------------------------------------------------------------------

@@ -1,0 +1,396 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+<F2>	automatic.vim	/^    imap <F2> <C-R>=strftime("%Y\/%m\/%d")<CR>$/;"	m
+<Leader>//	snippet.vim	/^    nnoremap <Leader>\/\/                                                 :call <SID>AutoComment()<CR>$/;"	m
+<Leader>//	snippet.vim	/^    vnoremap <Leader>\/\/                                                 <Esc>:call <SID>AutoComment2()<CR>$/;"	m
+<Leader>/e	snippet.vim	/^    nnoremap <Leader>\/e                                                 :call <SID>AddCurLineComment()<CR>$/;"	m
+<Leader>al	snippet.vim	/^    nnoremap <Leader>al                                                 :call <SID>AlBpp()<CR>$/;"	m
+<Leader>blk	timewave.vim	/^    nnoremap <Leader>blk                                                :call <SID>AddBlk()<CR>$/;"	m
+<Leader>bus	timewave.vim	/^    nnoremap <Leader>bus                                                :call <SID>AddBus()<CR>$/;"	m
+<Leader>clk	timewave.vim	/^    nnoremap <Leader>clk                                                :call <SID>AddClk()<CR>$/;"	m
+<Leader>hd	snippet.vim	/^    nnoremap <Leader>hd                                                 :call <SID>AddHeader()<CR>$/;"	m
+<Leader>inv	timewave.vim	/^    nnoremap <Leader>inv                                                :call <SID>Invert()<CR>$/;"	m
+<Leader>neg	timewave.vim	/^    nnoremap <Leader>neg                                                :call <SID>AddNeg()<CR>$/;"	m
+<Leader>sig	timewave.vim	/^    nnoremap <Leader>sig                                                :call <SID>AddSig()<CR>$/;"	m
+<Plug>Atv_Snippet_AddCurLineComment;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AddCurLineComment;                   :call <SID>AddCurLineComment()<CR>$/;"	m
+<Plug>Atv_Snippet_AddHeader;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AddHeader;                           :call <SID>AddHeader()<CR>$/;"	m
+<Plug>Atv_Snippet_AlB;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AlB;                                 :call <SID>AlB()<CR>$/;"	m
+<Plug>Atv_Snippet_AlBn;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AlBn;                                :call <SID>AlBn()<CR>$/;"	m
+<Plug>Atv_Snippet_AlBnn;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AlBnn;                               :call <SID>AlBnn()<CR>$/;"	m
+<Plug>Atv_Snippet_AlBp;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AlBp;                                :call <SID>AlBp()<CR>$/;"	m
+<Plug>Atv_Snippet_AlBpn;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AlBpn;                               :call <SID>AlBpn()<CR>$/;"	m
+<Plug>Atv_Snippet_AlBpp;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AlBpp;                               :call <SID>AlBpp()<CR>$/;"	m
+<Plug>Atv_Snippet_AutoComment2;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AutoComment2;                        <Esc>:call <SID>AutoComment2()<CR>$/;"	m
+<Plug>Atv_Snippet_AutoComment;	snippet.vim	/^noremap <script> <Plug>Atv_Snippet_AutoComment;                         :call <SID>AutoComment()<CR>$/;"	m
+<Plug>Atv_Timewave_AddBlk;	timewave.vim	/^noremap <script> <Plug>Atv_Timewave_AddBlk;                             :call <SID>AddBlk()<CR>$/;"	m
+<Plug>Atv_Timewave_AddBus;	timewave.vim	/^noremap <script> <Plug>Atv_Timewave_AddBus;                             :call <SID>AddBus()<CR>$/;"	m
+<Plug>Atv_Timewave_AddClk;	timewave.vim	/^noremap <script> <Plug>Atv_Timewave_AddClk;                             :call <SID>AddClk()<CR>$/;"	m
+<Plug>Atv_Timewave_AddNeg;	timewave.vim	/^noremap <script> <Plug>Atv_Timewave_AddNeg;                             :call <SID>AddNeg()<CR>$/;"	m
+<Plug>Atv_Timewave_AddSig;	timewave.vim	/^noremap <script> <Plug>Atv_Timewave_AddSig;                             :call <SID>AddSig()<CR>$/;"	m
+<Plug>Atv_Timewave_Invert;	timewave.vim	/^noremap <script> <Plug>Atv_Timewave_Invert;                             :call <SID>Invert()<CR>$/;"	m
+<S-F1>	automatic.vim	/^    map <S-F1>      :call g:ToggleAutoVerilogAll()<ESC>$/;"	m
+<S-F1>	template/format.vim	/^nnoremap <S-F1> :call FormatAdjust()<CR>$/;"	m
+<S-F2>	automatic/autoarg.vim	/^    map <S-F2>      :call g:AutoArg()<ESC>$/;"	m
+<S-F3>	automatic/autoinst.vim	/^    map <S-F3>      :call g:AutoInst(0)<ESC>$/;"	m
+<S-F4>	automatic/autopara.vim	/^    map <S-F4>      :call g:AutoPara(0)<ESC>$/;"	m
+<S-F5>	automatic/autopara.vim	/^    map <S-F5>      :call g:AutoParaValue(0)<ESC>$/;"	m
+<S-F6>	automatic/autodef.vim	/^    map <S-F6>      :call g:AutoReg()<ESC>$/;"	m
+<S-F7>	automatic/autodef.vim	/^    map <S-F7>      :call g:AutoWire()<ESC>$/;"	m
+<S-F8>	automatic/autodef.vim	/^    map <S-F8>      :call g:AutoDef()<ESC>$/;"	m
+AddBlk	timewave.vim	/^function s:AddBlk() "{{{1$/;"	f
+AddBus	timewave.vim	/^function s:AddBus() "{{{1$/;"	f
+AddClk	timewave.vim	/^function s:AddClk() "{{{1$/;"	f
+AddCurLineComment	snippet.vim	/^function s:AddCurLineComment() "{{{1$/;"	f
+AddHeader	snippet.vim	/^function s:AddHeader() "{{{1$/;"	f
+AddNeg	timewave.vim	/^function s:AddNeg() "{{{1$/;"	f
+AddSig	timewave.vim	/^function s:AddSig() "{{{1$/;"	f
+AlB	snippet.vim	/^function s:AlB() "{{{1$/;"	f
+AlBn	snippet.vim	/^function s:AlBn() "{{{1$/;"	f
+AlBnn	snippet.vim	/^function s:AlBnn() "{{{1$/;"	f
+AlBp	snippet.vim	/^function s:AlBp() "{{{1$/;"	f
+AlBpn	snippet.vim	/^function s:AlBpn() "{{{1$/;"	f
+AlBpp	snippet.vim	/^function s:AlBpp() "{{{1$/;"	f
+AlignAlways	template/format.vim	/^function AlignAlways()$/;"	f
+AlignPara	template/format.vim	/^function AlignPara()$/;"	f
+AutoArg	automatic/autoarg.vim	/^function! g:AutoArg() abort$/;"	f
+AutoComment	snippet.vim	/^function s:AutoComment() "{{{1$/;"	f
+AutoComment2	snippet.vim	/^function s:AutoComment2() "{{{1$/;"	f
+AutoDef	automatic/autodef.vim	/^function g:AutoDef() abort$/;"	f
+AutoInst	automatic/autoinst.vim	/^function! g:AutoInst(mode)$/;"	f
+AutoPara	automatic/autopara.vim	/^function! g:AutoPara(mode)$/;"	f
+AutoParaValue	automatic/autopara.vim	/^function! g:AutoParaValue(mode)$/;"	f
+AutoReg	automatic/autodef.vim	/^function! g:AutoReg() abort$/;"	f
+AutoTemplate	snippet.vim	/^function s:AutoTemplate() "{{{2$/;"	f
+AutoVerilogAll	automatic.vim	/^function! s:AutoVerilogAll()$/;"	f
+AutoVerilog_GetIO	automatic/autoinst.vim	/^function g:AutoVerilog_GetIO(lines,mode)$/;"	f
+AutoVerilog_GetInstModuleName	automatic/autoinst.vim	/^function g:AutoVerilog_GetInstModuleName()$/;"	f
+AutoVerilog_GetModuleFileDirDic	automatic/crossdir.vim	/^function g:AutoVerilog_GetModuleFileDirDic()$/;"	f
+AutoVerilog_RsvModuleLine	automatic/autoinst.vim	/^function g:AutoVerilog_RsvModuleLine(lines,module)$/;"	f
+AutoVerilog_SkipCommentLine	automatic/crossdir.vim	/^function g:AutoVerilog_SkipCommentLine(mode,idx,lines)$/;"	f
+AutoVerilog_SortNaturalOrder	automatic/crossdir.vim	/^function g:AutoVerilog_SortNaturalOrder(firstNr, secondNr)$/;"	f
+AutoWire	automatic/autodef.vim	/^function g:AutoWire() abort$/;"	f
+BusCurClkHaveChg	timewave.vim	/^function s:BusCurClkHaveChg(lnum,posedge,negedge) "{{{2$/;"	f
+CloseRtl	automatic/rtl.vim	/^function s:CloseRtl() abort "{{{3$/;"	f
+CreateRtl	automatic/rtl.vim	/^function s:CreateRtl() abort "{{{3$/;"	f
+DefMove	automatic/autodef.vim	/^function s:DefMove() $/;"	f
+DrawArg	automatic/autoarg.vim	/^function s:DrawArg(io_seqs)$/;"	f
+DrawIO	automatic/autoinst.vim	/^function s:DrawIO(io_seqs,io_list,chg_io_names,tcmt_names)$/;"	f
+DrawPara	automatic/autopara.vim	/^function s:DrawPara(para_seqs,para_list,chg_para_names)$/;"	f
+DrawParaValue	automatic/autopara.vim	/^function s:DrawParaValue(para_seqs,para_list)$/;"	f
+DrawReg	automatic/autodef.vim	/^function s:DrawReg(reg_names,reg_list)$/;"	f
+DrawWire	automatic/autodef.vim	/^function s:DrawWire(wire_names,wire_list)$/;"	f
+FoldRtl	automatic/rtl.vim	/^function s:FoldRtl() abort "{{{3$/;"	f
+FormatAdjust	template/format.vim	/^function FormatAdjust()$/;"	f
+GetAllSig	automatic/autodef.vim	/^function s:GetAllSig(lines,mode)$/;"	f
+GetChangedInstIO	automatic/autoinst.vim	/^function s:GetChangedInstIO(lines,io_names)$/;"	f
+GetChangedPara	automatic/autopara.vim	/^function s:GetChangedPara(lines)$/;"	f
+GetDeclReg	automatic/autodef.vim	/^function s:GetDeclReg(lines)$/;"	f
+GetDeclWire	automatic/autodef.vim	/^function s:GetDeclWire(lines)$/;"	f
+GetExpandDir	automatic/crossdir.vim	/^function s:GetExpandDir(dir)$/;"	f
+GetFileDirDicFromFlist	automatic/crossdir.vim	/^function s:GetFileDirDicFromFlist(file)$/;"	f
+GetFileDirDicFromLib	automatic/crossdir.vim	/^function s:GetFileDirDicFromLib(dirlist,rec,vlist,elist)$/;"	f
+GetFileDirDicFromLibRec	automatic/crossdir.vim	/^function s:GetFileDirDicFromLibRec(dir,rec,files,elist)$/;"	f
+GetFileList	automatic/crossdir.vim	/^function s:GetFileList()$/;"	f
+GetInstIO	automatic/autoinst.vim	/^function s:GetInstIO(lines)$/;"	f
+GetInstPara	automatic/autopara.vim	/^function s:GetInstPara(lines)$/;"	f
+GetLeftWidth	automatic/autodef.vim	/^function s:GetLeftWidth(left,seq,name,line,width_names)$/;"	f
+GetModule	automatic/rtl.vim	/^function s:GetModule(lines)$/;"	f
+GetModuleFileDict	automatic/crossdir.vim	/^function s:GetModuleFileDict(files)$/;"	f
+GetModuleFileDirDicFromTags	automatic/crossdir.vim	/^function s:GetModuleFileDirDicFromTags(file)$/;"	f
+GetModuleInst	automatic/rtl.vim	/^function s:GetModuleInst(lines,mname)$/;"	f
+GetPara	automatic/autopara.vim	/^function s:GetPara(lines,mode)$/;"	f
+GetParaModuleName	automatic/autopara.vim	/^function s:GetParaModuleName()$/;"	f
+GetPosedge	timewave.vim	/^function s:GetPosedge(signeg) "{{{2$/;"	f
+GetReg	automatic/autodef.vim	/^function s:GetReg(lines)$/;"	f
+GetRightWidth	automatic/autodef.vim	/^function s:GetRightWidth(right,name,width_names)$/;"	f
+GetSigName	automatic/autodef.vim	/^function s:GetSigName(str)$/;"	f
+GetSigNameLineNum	timewave.vim	/^function s:GetSigNameLineNum() "{{{2$/;"	f
+GetTags	automatic/crossdir.vim	/^function s:GetTags()$/;"	f
+GetVerilogLib	automatic/crossdir.vim	/^function s:GetVerilogLib()$/;"	f
+GetWire	automatic/autodef.vim	/^function s:GetWire(lines)$/;"	f
+GetaWire	automatic/autodef.vim	/^function s:GetaWire(lines)$/;"	f
+GetcReg	automatic/autodef.vim	/^function s:GetcReg(lines)$/;"	f
+GetfReg	automatic/autodef.vim	/^function s:GetfReg(lines)$/;"	f
+GetiWire	automatic/autodef.vim	/^function s:GetiWire(lines,files,modules,reg_width_names,decl_reg,io_names)$/;"	f
+GetiWire_DelPara	automatic/autodef.vim	/^function s:GetiWire_DelPara(lines)$/;"	f
+Invert	timewave.vim	/^function s:Invert() "{{{1$/;"	f
+KillAutoArg	automatic/autoarg.vim	/^function s:KillAutoArg() $/;"	f
+KillAutoArg	automatic/autoarg.vim	/^function! g:KillAutoArg() abort$/;"	f
+KillAutoDef	automatic/autodef.vim	/^function g:KillAutoDef() abort$/;"	f
+KillAutoDef	automatic/autodef.vim	/^function s:KillAutoDef() $/;"	f
+KillAutoInst	automatic/autoinst.vim	/^function s:KillAutoInst() $/;"	f
+KillAutoInst	automatic/autoinst.vim	/^function! g:KillAutoInst(mode) abort$/;"	f
+KillAutoPara	automatic/autopara.vim	/^function s:KillAutoPara(inst_name) $/;"	f
+KillAutoPara	automatic/autopara.vim	/^function! g:KillAutoPara(mode) abort$/;"	f
+KillAutoReg	automatic/autodef.vim	/^function s:KillAutoReg() $/;"	f
+KillAutoReg	automatic/autodef.vim	/^function! g:KillAutoReg() abort$/;"	f
+KillAutoVerilogAll	automatic.vim	/^function! s:KillAutoVerilogAll()$/;"	f
+KillAutoWire	automatic/autodef.vim	/^function g:KillAutoWire() abort$/;"	f
+KillAutoWire	automatic/autodef.vim	/^function s:KillAutoWire() $/;"	f
+NewSimpleProgressBar	automatic/autodef.vim	/^func! NewSimpleProgressBar(title, max_value, ...)$/;"	f
+OpenRtl	automatic/rtl.vim	/^function s:OpenRtl(file) abort "{{{3$/;"	f
+OpenRtlInst	automatic/rtl.vim	/^function s:OpenRtlInst() abort "{{{3$/;"	f
+OpenRtlModule	automatic/rtl.vim	/^function s:OpenRtlModule() abort "{{{3$/;"	f
+OpenRtlModuleSplit	automatic/rtl.vim	/^function s:OpenRtlModuleSplit() abort "{{{3$/;"	f
+ParaAdjust	template/format.vim	/^function ParaAdjust(line,cmts)$/;"	f
+PortAdjust	template/format.vim	/^function PortAdjust(line,cmts)$/;"	f
+RemoveCommentLine	automatic/rtl.vim	/^function s:RemoveCommentLine(lines)$/;"	f
+RtlHelp	automatic/rtl.vim	/^function s:RtlHelp() "{{{2$/;"	f
+RtlTree	automatic/rtl.vim	/^command -nargs=? -complete=file RtlTree :call <SID>RtlTree(<f-args>)$/;"	c
+RtlTree	automatic/rtl.vim	/^function s:RtlTree(...) "{{{2$/;"	f
+SetRtlBufAu	automatic/rtl.vim	/^function s:SetRtlBufAu()$/;"	f
+SetRtlBufHl	automatic/rtl.vim	/^function s:SetRtlBufHl()$/;"	f
+SetRtlBufKey	automatic/rtl.vim	/^function s:SetRtlBufKey()$/;"	f
+SetRtlBufOpt	automatic/rtl.vim	/^function s:SetRtlBufOpt()$/;"	f
+SigCurClkIsHigh	timewave.vim	/^function s:SigCurClkIsHigh(lnum,posedge,negedge) "{{{2$/;"	f
+SigIsNeg	timewave.vim	/^function s:SigIsNeg() "{{{2$/;"	f
+SigLastClkIsHigh	timewave.vim	/^function s:SigLastClkIsHigh(lnum,posedge,negedge) "{{{2$/;"	f
+SigNextClkIsHigh	timewave.vim	/^function s:SigNextClkIsHigh(lnum,posedge,negedge) "{{{2$/;"	f
+TestAutoVerilog	automatic/autodef.vim	/^function TestAutoVerilog() "{{{2$/;"	f
+ToggleAutoVerilogAll	automatic.vim	/^function g:ToggleAutoVerilogAll()$/;"	f
+UpdateLastModifyTime	snippet.vim	/^function s:UpdateLastModifyTime() "{{{2$/;"	f
+UpdateVimscriptLastModifyTime	automatic.vim	/^function s:UpdateVimscriptLastModifyTime()$/;"	f
+UpdateVimscriptLastModifyTime	automatic/crossdir.vim	/^function s:UpdateVimscriptLastModifyTime()$/;"	f
+UpdateVimscriptLastModifyTime	snippet.vim	/^function s:UpdateVimscriptLastModifyTime()$/;"	f
+UpdateVimscriptLastModifyTime	timewave.vim	/^function s:UpdateVimscriptLastModifyTime()$/;"	f
+WireRegAdjust	template/format.vim	/^function WireRegAdjust(line,cmts)$/;"	f
+filetype_verilog	snippet.vim	/^augroup filetype_verilog$/;"	a
+g:_ATV_AUTOARG_DEFAULTS	automatic/autoarg.vim	/^let g:_ATV_AUTOARG_DEFAULTS = {$/;"	v
+g:_ATV_AUTODEF_DEFAULTS	automatic/autodef.vim	/^let g:_ATV_AUTODEF_DEFAULTS = {$/;"	v
+g:_ATV_AUTOINST_DEFAULTS	automatic/autoinst.vim	/^let g:_ATV_AUTOINST_DEFAULTS = {$/;"	v
+g:_ATV_AUTOPARA_DEFAULTS	automatic/autopara.vim	/^let g:_ATV_AUTOPARA_DEFAULTS = {$/;"	v
+g:_ATV_CROSSDIR_DEFAULTS	automatic/crossdir.vim	/^let g:_ATV_CROSSDIR_DEFAULTS = {$/;"	v
+g:_ATV_RTL_DEFAULTS	automatic/rtl.vim	/^let g:_ATV_RTL_DEFAULTS = {$/;"	v
+g:_ATV_SNIPPET_DEFAULTS	snippet.vim	/^let g:_ATV_SNIPPET_DEFAULTS = {$/;"	v
+g:_ATV_TIMEWAVE_DEFAULTS	timewave.vim	/^let g:_ATV_TIMEWAVE_DEFAULTS = {$/;"	v
+g:atv_autoarg_	automatic/autoarg.vim	/^        let g:atv_autoarg_{s:key} = copy(g:_ATV_AUTOARG_DEFAULTS[s:key])$/;"	v
+g:atv_autoarg_tail_nalign	automatic/autoarg.vim	/^let g:atv_autoarg_tail_nalign = g:atv_autoarg_mode ? 1 : g:atv_autoarg_tail_nalign$/;"	v
+g:atv_autodef_	automatic/autodef.vim	/^        let g:atv_autodef_{s:key} = copy(g:_ATV_AUTODEF_DEFAULTS[s:key])$/;"	v
+g:atv_autoinst_	automatic/autoinst.vim	/^        let g:atv_autoinst_{s:key} = copy(g:_ATV_AUTOINST_DEFAULTS[s:key])$/;"	v
+g:atv_autoinst_keep_name	automatic/autoinst.vim	/^    let g:atv_autoinst_keep_name = 0$/;"	v
+g:atv_autoinst_rs_cnt	automatic/autoinst.vim	/^    let g:atv_autoinst_rs_cnt = 0$/;"	v
+g:atv_autopara_	automatic/autopara.vim	/^        let g:atv_autopara_{s:key} = copy(g:_ATV_AUTOPARA_DEFAULTS[s:key])$/;"	v
+g:atv_crossdir_	automatic/crossdir.vim	/^        let g:atv_crossdir_{s:key} = copy(g:_ATV_CROSSDIR_DEFAULTS[s:key])$/;"	v
+g:atv_personal_keys	automatic.vim	/^let g:atv_personal_keys = get(g:,'atv_personal_keys',0)$/;"	v
+g:atv_rtl_	automatic/rtl.vim	/^        let g:atv_rtl_{s:key} = copy(g:_ATV_RTL_DEFAULTS[s:key])$/;"	v
+g:atv_snippet_	snippet.vim	/^        let g:atv_snippet_{s:key} = copy(g:_ATV_SNIPPET_DEFAULTS[s:key])$/;"	v
+g:atv_snippet_	snippet.vim	/^        let g:atv_snippet_{s:key} = expand(g:atv_snippet_{s:key})$/;"	v
+g:atv_sort_funcref	automatic/crossdir.vim	/^        let g:atv_sort_funcref = 'g:AutoVerilog_SortNaturalOrder'$/;"	v
+g:atv_sort_funcref	automatic/crossdir.vim	/^        let g:atv_sort_funcref = 'n'$/;"	v
+g:atv_sort_funcref	automatic/crossdir.vim	/^    let g:atv_sort_funcref = 'g:AutoVerilog_SortNaturalOrder'$/;"	v
+g:atv_sort_funcref	automatic/crossdir.vim	/^    let g:atv_sort_funcref = 'n'$/;"	v
+g:atv_timewave_	timewave.vim	/^        let g:atv_timewave_{s:key} = copy(g:_ATV_TIMEWAVE_DEFAULTS[s:key])$/;"	v
+g:loaded_automatic_verilog_autoarg	automatic/autoarg.vim	/^let g:loaded_automatic_verilog_autoarg = 1$/;"	v
+g:loaded_automatic_verilog_autodef	automatic/autodef.vim	/^let g:loaded_automatic_verilog_autodef = 1$/;"	v
+g:loaded_automatic_verilog_autoinst	automatic/autoinst.vim	/^let g:loaded_automatic_verilog_autoinst = 1$/;"	v
+g:loaded_automatic_verilog_autopara	automatic/autopara.vim	/^let g:loaded_automatic_verilog_autopara = 1$/;"	v
+g:loaded_automatic_verilog_crossdir	automatic/crossdir.vim	/^let g:loaded_automatic_verilog_crossdir = 1$/;"	v
+g:loaded_automatic_verilog_plugin	automatic.vim	/^let g:loaded_automatic_verilog_plugin = 1$/;"	v
+g:loaded_automatic_verilog_rtl	automatic/rtl.vim	/^let g:loaded_automatic_verilog_rtl = 1$/;"	v
+g:loaded_automatic_verilog_snippet	snippet.vim	/^let g:loaded_automatic_verilog_snippet = 1$/;"	v
+g:loaded_automatic_verilog_timewave	timewave.vim	/^let g:loaded_automatic_verilog_timewave = 1$/;"	v
+oTreeNode.CreateChildren	automatic/rtl.vim	/^function s:oTreeNode.CreateChildren() "{{{3$/;"	f
+oTreeNode.CreateTree	automatic/rtl.vim	/^function s:oTreeNode.CreateTree(level) "{{{2$/;"	f
+oTreeNode.Draw	automatic/rtl.vim	/^function s:oTreeNode.Draw(lines) "{{{3$/;"	f
+oTreeNode.Expand	automatic/rtl.vim	/^function s:oTreeNode.Expand() "{{{2$/;"	f
+oTreeNode.New	automatic/rtl.vim	/^function s:oTreeNode.New() "{{{2$/;"	f
+oTreeNode.Shrink	automatic/rtl.vim	/^function s:oTreeNode.Shrink() "{{{2$/;"	f
+progressbar.incr	automatic/autodef.vim	/^func! s:progressbar.incr( ... )$/;"	f
+progressbar.paint	automatic/autodef.vim	/^func! s:progressbar.paint()$/;"	f
+progressbar.restore	automatic/autodef.vim	/^func! s:progressbar.restore()$/;"	f
+progressbar.setStyle	automatic/autodef.vim	/^func! s:progressbar.setStyle( item, style)$/;"	f
+s:RtlTreeBufName	automatic/rtl.vim	/^let s:RtlTreeBufName = "RtlTree"."("."top".")"$/;"	v
+s:RtlTreeWinWidth	automatic/rtl.vim	/^let s:RtlTreeWinWidth = 31$/;"	v
+s:VlogKeyWords	automatic/autodef.vim	/^let s:VlogKeyWords  = s:VlogTypePre . s:VlogTypePort . s:VlogTypeConn .  s:VlogTypeData . s:VlogTypeConn. s:VlogTypeCalc . s:VlogTypeConn. s:VlogTypeStru . s:VlogTypeConn. s:VlogTypeOthe . s:VlogTypePost$/;"	v
+s:VlogKeyWords	automatic/autoinst.vim	/^let s:VlogKeyWords  = s:VlogTypePre . s:VlogTypePort . s:VlogTypeConn .  s:VlogTypeData . s:VlogTypeConn. s:VlogTypeCalc . s:VlogTypeConn. s:VlogTypeStru . s:VlogTypeConn. s:VlogTypeOthe . s:VlogTypePost$/;"	v
+s:VlogKeyWords	automatic/rtl.vim	/^let s:VlogKeyWords  = s:VlogTypePre . s:VlogTypePort . s:VlogTypeConn .  s:VlogTypeData . s:VlogTypeConn. s:VlogTypeCalc . s:VlogTypeConn. s:VlogTypeStru . s:VlogTypeConn. s:VlogTypeOthe . s:VlogTypePost$/;"	v
+s:VlogTypeCalc	automatic/autodef.vim	/^let s:VlogTypeCalc =                  '\\<assign\\>\\|'$/;"	v
+s:VlogTypeCalc	automatic/autodef.vim	/^let s:VlogTypeCalc = s:VlogTypeCalc . '\\<always\\>'$/;"	v
+s:VlogTypeCalc	automatic/autoinst.vim	/^let s:VlogTypeCalc =                  '\\<assign\\>\\|'$/;"	v
+s:VlogTypeCalc	automatic/autoinst.vim	/^let s:VlogTypeCalc = s:VlogTypeCalc . '\\<always\\>'$/;"	v
+s:VlogTypeCalc	automatic/rtl.vim	/^let s:VlogTypeCalc =                  '\\<assign\\>\\|'$/;"	v
+s:VlogTypeCalc	automatic/rtl.vim	/^let s:VlogTypeCalc = s:VlogTypeCalc . '\\<always\\>'$/;"	v
+s:VlogTypeCalcs	automatic/autodef.vim	/^let s:VlogTypeCalcs = s:VlogTypePre . s:VlogTypeCalc . s:VlogTypePost$/;"	v
+s:VlogTypeCalcs	automatic/autoinst.vim	/^let s:VlogTypeCalcs = s:VlogTypePre . s:VlogTypeCalc . s:VlogTypePost$/;"	v
+s:VlogTypeCalcs	automatic/rtl.vim	/^let s:VlogTypeCalcs = s:VlogTypePre . s:VlogTypeCalc . s:VlogTypePost$/;"	v
+s:VlogTypeConn	automatic/autodef.vim	/^let s:VlogTypeConn = '\\|'$/;"	v
+s:VlogTypeConn	automatic/autoinst.vim	/^let s:VlogTypeConn = '\\|'$/;"	v
+s:VlogTypeConn	automatic/rtl.vim	/^let s:VlogTypeConn = '\\|'$/;"	v
+s:VlogTypeData	automatic/autodef.vim	/^let s:VlogTypeData =                  '\\<wire\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autodef.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<defparam\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autodef.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<genvar\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autodef.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<integer\\>'$/;"	v
+s:VlogTypeData	automatic/autodef.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<localparam\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autodef.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<parameter\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autodef.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<reg\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autoinst.vim	/^let s:VlogTypeData =                  '\\<wire\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autoinst.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<defparam\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autoinst.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<genvar\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autoinst.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<integer\\>'$/;"	v
+s:VlogTypeData	automatic/autoinst.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<localparam\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autoinst.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<parameter\\>\\|'$/;"	v
+s:VlogTypeData	automatic/autoinst.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<reg\\>\\|'$/;"	v
+s:VlogTypeData	automatic/rtl.vim	/^let s:VlogTypeData =                  '\\<wire\\>\\|'$/;"	v
+s:VlogTypeData	automatic/rtl.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<defparam\\>\\|'$/;"	v
+s:VlogTypeData	automatic/rtl.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<genvar\\>\\|'$/;"	v
+s:VlogTypeData	automatic/rtl.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<integer\\>'$/;"	v
+s:VlogTypeData	automatic/rtl.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<localparam\\>\\|'$/;"	v
+s:VlogTypeData	automatic/rtl.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<parameter\\>\\|'$/;"	v
+s:VlogTypeData	automatic/rtl.vim	/^let s:VlogTypeData = s:VlogTypeData . '\\<reg\\>\\|'$/;"	v
+s:VlogTypeDatas	automatic/autodef.vim	/^let s:VlogTypeDatas = s:VlogTypePre . s:VlogTypeData . s:VlogTypePost$/;"	v
+s:VlogTypeDatas	automatic/autoinst.vim	/^let s:VlogTypeDatas = s:VlogTypePre . s:VlogTypeData . s:VlogTypePost$/;"	v
+s:VlogTypeDatas	automatic/rtl.vim	/^let s:VlogTypeDatas = s:VlogTypePre . s:VlogTypeData . s:VlogTypePost$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe =                  '\\<posedge\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<endspecify\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<forever\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<include\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<initial\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<negedge\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<or\\>'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<specify\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autodef.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<timescale\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe =                  '\\<posedge\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<endspecify\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<forever\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<include\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<initial\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<negedge\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<or\\>'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<specify\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/autoinst.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<timescale\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe =                  '\\<posedge\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<endspecify\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<forever\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<include\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<initial\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<negedge\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<or\\>'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<specify\\>\\|'$/;"	v
+s:VlogTypeOthe	automatic/rtl.vim	/^let s:VlogTypeOthe = s:VlogTypeOthe . '\\<timescale\\>\\|'$/;"	v
+s:VlogTypeOthes	automatic/autodef.vim	/^let s:VlogTypeOthes = s:VlogTypePre . s:VlogTypeOthe . s:VlogTypePost$/;"	v
+s:VlogTypeOthes	automatic/autoinst.vim	/^let s:VlogTypeOthes = s:VlogTypePre . s:VlogTypeOthe . s:VlogTypePost$/;"	v
+s:VlogTypeOthes	automatic/rtl.vim	/^let s:VlogTypeOthes = s:VlogTypePre . s:VlogTypeOthe . s:VlogTypePost$/;"	v
+s:VlogTypePort	automatic/autodef.vim	/^let s:VlogTypePort =                  '\\<input\\>\\|'$/;"	v
+s:VlogTypePort	automatic/autodef.vim	/^let s:VlogTypePort = s:VlogTypePort . '\\<inout\\>'$/;"	v
+s:VlogTypePort	automatic/autodef.vim	/^let s:VlogTypePort = s:VlogTypePort . '\\<output\\>\\|'$/;"	v
+s:VlogTypePort	automatic/autoinst.vim	/^let s:VlogTypePort =                  '\\<input\\>\\|'$/;"	v
+s:VlogTypePort	automatic/autoinst.vim	/^let s:VlogTypePort = s:VlogTypePort . '\\<inout\\>'$/;"	v
+s:VlogTypePort	automatic/autoinst.vim	/^let s:VlogTypePort = s:VlogTypePort . '\\<output\\>\\|'$/;"	v
+s:VlogTypePort	automatic/rtl.vim	/^let s:VlogTypePort =                  '\\<input\\>\\|'$/;"	v
+s:VlogTypePort	automatic/rtl.vim	/^let s:VlogTypePort = s:VlogTypePort . '\\<inout\\>'$/;"	v
+s:VlogTypePort	automatic/rtl.vim	/^let s:VlogTypePort = s:VlogTypePort . '\\<output\\>\\|'$/;"	v
+s:VlogTypePorts	automatic/autodef.vim	/^let s:VlogTypePorts = s:VlogTypePre . s:VlogTypePort . s:VlogTypePost$/;"	v
+s:VlogTypePorts	automatic/autoinst.vim	/^let s:VlogTypePorts = s:VlogTypePre . s:VlogTypePort . s:VlogTypePost$/;"	v
+s:VlogTypePorts	automatic/rtl.vim	/^let s:VlogTypePorts = s:VlogTypePre . s:VlogTypePort . s:VlogTypePost$/;"	v
+s:VlogTypePost	automatic/autodef.vim	/^let s:VlogTypePost = '\\)'$/;"	v
+s:VlogTypePost	automatic/autoinst.vim	/^let s:VlogTypePost = '\\)'$/;"	v
+s:VlogTypePost	automatic/rtl.vim	/^let s:VlogTypePost = '\\)'$/;"	v
+s:VlogTypePre	automatic/autodef.vim	/^let s:VlogTypePre  = '\\('$/;"	v
+s:VlogTypePre	automatic/autoinst.vim	/^let s:VlogTypePre  = '\\('$/;"	v
+s:VlogTypePre	automatic/rtl.vim	/^let s:VlogTypePre  = '\\('$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru =                  '\\<module\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<begin\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<case\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<casex\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<casez\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<celldefine\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<default\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<define\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<else\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<elsif\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<end\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endcase\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endcelldefine\\>'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endfunction\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endgenerate\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endif\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endmodule\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endtask\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<for\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<function\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<generate\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<if\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<ifdef\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<ifndef\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autodef.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<task\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru =                  '\\<module\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<begin\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<case\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<casex\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<casez\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<celldefine\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<default\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<define\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<else\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<elsif\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<end\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endcase\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endcelldefine\\>'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endfunction\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endgenerate\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endif\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endmodule\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endtask\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<for\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<function\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<generate\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<if\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<ifdef\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<ifndef\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/autoinst.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<task\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru =                  '\\<module\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<begin\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<case\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<casex\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<casez\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<celldefine\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<default\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<define\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<else\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<elsif\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<end\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endcase\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endcelldefine\\>'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endfunction\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endgenerate\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endif\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endmodule\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<endtask\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<for\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<function\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<generate\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<if\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<ifdef\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<ifndef\\>\\|'$/;"	v
+s:VlogTypeStru	automatic/rtl.vim	/^let s:VlogTypeStru = s:VlogTypeStru . '\\<task\\>\\|'$/;"	v
+s:VlogTypeStrus	automatic/autodef.vim	/^let s:VlogTypeStrus = s:VlogTypePre . s:VlogTypeStru . s:VlogTypePost$/;"	v
+s:VlogTypeStrus	automatic/autoinst.vim	/^let s:VlogTypeStrus = s:VlogTypePre . s:VlogTypeStru . s:VlogTypePost$/;"	v
+s:VlogTypeStrus	automatic/rtl.vim	/^let s:VlogTypeStrus = s:VlogTypePre . s:VlogTypeStru . s:VlogTypePost$/;"	v
+s:atv_pb_en	automatic/autodef.vim	/^let s:atv_pb_en = 0$/;"	v
+s:clk_num	timewave.vim	/^let s:clk_num = g:atv_timewave_clk_num                      "number of clocks generated$/;"	v
+s:clk_period	timewave.vim	/^let s:clk_period = g:atv_timewave_clk_period                "clock period$/;"	v
+s:cpo	automatic/autodef.vim	/^let s:cpo=&cpo$/;"	v
+s:cq_trans	timewave.vim	/^let s:cq_trans = g:atv_timewave_cq_trans                    "signal transition started n spaces after clock transition$/;"	v
+s:flist_browse_file	automatic/crossdir.vim	/^let s:flist_browse_file = ''$/;"	v
+s:flist_selected_file	automatic/crossdir.vim	/^let s:flist_selected_file = ''$/;"	v
+s:lspace	automatic/autoinst.vim	/^let s:lspace = repeat(' ',g:atv_autoinst_ls_cnt)$/;"	v
+s:not_keywords_pattern	automatic/autodef.vim	/^let s:not_keywords_pattern = s:VlogKeyWords . '\\@!\\(\\<\\w\\+\\>\\)'$/;"	v
+s:not_keywords_pattern	automatic/autoinst.vim	/^let s:not_keywords_pattern = s:VlogKeyWords . '\\@!\\(\\<\\w\\+\\>\\)'$/;"	v
+s:not_keywords_pattern	automatic/rtl.vim	/^let s:not_keywords_pattern = s:VlogKeyWords . '\\@!\\(\\<\\w\\+\\>\\)'$/;"	v
+s:oTreeNode	automatic/rtl.vim	/^let s:oTreeNode = {}$/;"	v
+s:progressbar	automatic/autodef.vim	/^let s:progressbar = {}$/;"	v
+s:rspace	automatic/autoinst.vim	/^let s:rspace = repeat(' ',g:atv_autoinst_rs_cnt)$/;"	v
+s:rtltree	automatic/rtl.vim	/^let s:rtltree = {}$/;"	v
+s:sig_offset	timewave.vim	/^let s:sig_offset = g:atv_timewave_sig_offset                "signal offset$/;"	v
+s:skip_cmt_debug	automatic/crossdir.vim	/^let s:skip_cmt_debug = 0$/;"	v
+s:st_prefix	automatic/autoarg.vim	/^let s:st_prefix = repeat(' ',g:atv_autoarg_st_pos)$/;"	v
+s:st_prefix	automatic/autodef.vim	/^let s:st_prefix = repeat(' ',g:atv_autodef_st_pos)$/;"	v
+s:st_prefix	automatic/autoinst.vim	/^let s:st_prefix = repeat(' ',g:atv_autoinst_st_pos)$/;"	v
+s:st_prefix	automatic/autopara.vim	/^let s:st_prefix = repeat(' ',g:atv_autopara_st_pos)$/;"	v
+s:tags_browse_file	automatic/crossdir.vim	/^let s:tags_browse_file = ''$/;"	v
+s:tags_selected_file	automatic/crossdir.vim	/^let s:tags_selected_file = ''$/;"	v
+s:wave_max_wd	timewave.vim	/^let s:wave_max_wd = s:sig_offset + s:clk_num*s:clk_period   "maximum width$/;"	v

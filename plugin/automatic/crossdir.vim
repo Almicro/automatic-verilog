@@ -2,7 +2,7 @@
 " Vim Plugin for Verilog Code Automactic Generation 
 " Author:         HonkW
 " Website:        https://honk.wang
-" Last Modified:  2023/07/16 17:46
+" Last Modified:  2024/01/06 04:10
 " File:           crossdir.vim
 " Note:           search cross directory by tags/filelist/verilog-library
 "------------------------------------------------------------------------------

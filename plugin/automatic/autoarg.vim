@@ -2,7 +2,7 @@
 " Vim Plugin for Verilog Code Automactic Generation 
 " Author:         HonkW
 " Website:        https://honk.wang
-" Last Modified:  2022/09/03 23:37
+" Last Modified:  2024/01/06 10:08
 " File:           autoarg.vim
 " Note:           AutoArg function self-made
 "------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ let g:loaded_automatic_verilog_autoarg = 1
 "}}}1
 
 "Defaults 默认配置{{{1
-
+let g:atv_autoinst_95_support = 1
 "AutoArg Config 自动声明配置
 "+--------------+-----------------------------------------+
 "|    st_pos    |             start position              |
@@ -30,7 +30,7 @@ let g:loaded_automatic_verilog_autoarg = 1
 "+--------------+-----------------------------------------+
 let g:_ATV_AUTOARG_DEFAULTS = {
             \'st_pos':      4,
-            \'sym_pos':     32,
+            \'sym_pos':     84,
             \'mode':        1,
             \'io_clsf':     1,
             \'tail_nalign': 1

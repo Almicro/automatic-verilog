@@ -2,7 +2,7 @@
 " Vim Plugin for Verilog Code Automactic Generation 
 " Author:         HonkW
 " Website:        https://honk.wang
-" Last Modified:  2022/09/04 00:06
+" Last Modified:  2024/01/09 07:03
 " File:           automatic.vim
 " Note:           1. Auto function based on zhangguo's vimscript, heavily modified
 "                 2. Rtl Tree based on zhangguo's vimscript, slightly modified
@@ -76,7 +76,6 @@ function! s:AutoVerilogAll()
     call g:AutoPara(1)
     call g:AutoParaValue(1)
     call g:AutoArg()
-    call g:AutoDef()
     call g:AutoReg()
     call g:AutoWire()
 endfunction
@@ -86,7 +85,6 @@ function! s:KillAutoVerilogAll()
     call g:KillAutoPara(1)
     call g:KillAutoParaValue(1)
     call g:KillAutoArg()
-    call g:KillAutoDef()
     call g:KillAutoReg()
     call g:KillAutoWire()
 endfunction

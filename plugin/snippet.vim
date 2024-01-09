@@ -2,7 +2,7 @@
 " Vim Plugin for Verilog Code Automactic Generation 
 " Author:         HonkW
 " Website:        https://honk.wang
-" Last Modified:  2022/08/05 21:28
+" Last Modified:  2024/01/06 10:56
 " File:           snippet.vim
 " Note:           Snippet function partly from zhangguo's vimscript,partly from load_template
 "------------------------------------------------------------------------------
@@ -64,23 +64,11 @@ amenu &Verilog.Code.Always@.always\ @(negedge\ or\ negedge)                     
 amenu &Verilog.Code.Always@.always\ @(posedge)                                  :call <SID>AlBp()<CR>
 amenu &Verilog.Code.Always@.always\ @(negedge)                                  :call <SID>AlBn()<CR>
 amenu &Verilog.Code.Header.AddHeader<TAB><<Leader>hd>                           :call <SID>AddHeader()<CR>
-amenu &Verilog.Code.Comment.SingleLineComment<TAB><<Leader>//>                  :call <SID>AutoComment()<CR>
-amenu &Verilog.Code.Comment.MultiLineComment<TAB>Visual-Mode\ <<Leader>/*>      <Esc>:call <SID>AutoComment2()<CR>
-amenu &Verilog.Code.Comment.CurLineAddComment<TAB><Leader>/$>                   :call <SID>AddCurLineComment()<CR>
 if !hasmapto('<Leader>hd')
     nnoremap <Leader>hd                                                 :call <SID>AddHeader()<CR>
 endif
 if !hasmapto('<Leader>al')
     nnoremap <Leader>al                                                 :call <SID>AlBpp()<CR>
-endif
-if !hasmapto('<Leader>//','n')
-    nnoremap <Leader>//                                                 :call <SID>AutoComment()<CR>
-endif
-if !hasmapto('<Leader>//','v')
-    vnoremap <Leader>//                                                 <Esc>:call <SID>AutoComment2()<CR>
-endif
-if !hasmapto('<Leader>/e')
-    nnoremap <Leader>/e                                                 :call <SID>AddCurLineComment()<CR>
 endif
 noremap <script> <Plug>Atv_Snippet_AddHeader;                           :call <SID>AddHeader()<CR>
 noremap <script> <Plug>Atv_Snippet_AlBpp;                               :call <SID>AlBpp()<CR>
@@ -89,9 +77,6 @@ noremap <script> <Plug>Atv_Snippet_AlB;                                 :call <S
 noremap <script> <Plug>Atv_Snippet_AlBnn;                               :call <SID>AlBnn()<CR>
 noremap <script> <Plug>Atv_Snippet_AlBp;                                :call <SID>AlBp()<CR>
 noremap <script> <Plug>Atv_Snippet_AlBn;                                :call <SID>AlBn()<CR>
-noremap <script> <Plug>Atv_Snippet_AutoComment;                         :call <SID>AutoComment()<CR>
-noremap <script> <Plug>Atv_Snippet_AutoComment2;                        <Esc>:call <SID>AutoComment2()<CR>
-noremap <script> <Plug>Atv_Snippet_AddCurLineComment;                   :call <SID>AddCurLineComment()<CR>
 "}}}1
 
 "Header
@@ -248,43 +233,3 @@ function s:AlB() "{{{1
 endfunction "}}}1
 
 "Comment
-
-function s:AutoComment() "{{{1
-    let lnum = line(".")
-    let line = getline(lnum)
-    if line =~ '^\/\/ by .* \d\d\d\d-\d\d-\d\d'
-        let tmp_line = substitute(line,'^\/\/ by .* \d\d\d\d-\d\d-\d\d | ','','')
-    else
-        let tmp_line = '// by ' . g:atv_snippet_author . ' ' . strftime("%Y-%m-%d") . ' | ' . line
-    endif
-    call setline(lnum,tmp_line)
-endfunction "}}}1
-
-function s:AutoComment2() "{{{1
-    let col = col(".")
-    let lnum = line(".")
-    if line("'<") == lnum || line("'>") == lnum
-        if getline(line("'<")) =~ '^/\*'
-            '<
-            execute "normal dd"
-            '>
-            execute "normal dd"
-            if lnum != line("'<")
-                let lnum = line("'>")-1
-            endif
-        else
-            call append(line("'<")-1,'/*----------------  by '.g:atv_snippet_author.' '.strftime("%Y-%m-%d").'  ---------------------')
-            call append(line("'>")  ,'------------------  by '.g:atv_snippet_author.' '.strftime("%Y-%m-%d").'  -------------------*/')
-            let lnum = line(".")
-        endif
-    endif
-    call cursor(lnum,col)
-endfunction "}}}1
-
-function s:AddCurLineComment() "{{{1
-    let lnum = line(".")
-    let line = getline(lnum)
-    let tmp_line = line . ' // ' . g:atv_snippet_author . ' ' . strftime("%Y-%m-%d") . ' |'
-    call setline(lnum,tmp_line)
-    normal $
-endfunction "}}}1
